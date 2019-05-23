@@ -20,49 +20,53 @@ public class RegisterPage extends BasePage {
 
     public boolean isUserNamePrecent() {
         return driver.findElement(userNameInput).isDisplayed();
-
     }
 
     public boolean isLastNamePrecent() {
         return driver.findElement(lastNameInput).isDisplayed();
 
     }
+
     public boolean isEressmailAddPrecent() {
         return driver.findElement(addressMailAddInput).isDisplayed();
 
     }
+
     public boolean isPassworPrecent() {
         return driver.findElement(passwordInput).isDisplayed();
 
     }
+
     public boolean isConfirmPasswordPrecent() {
         return driver.findElement(confirmPasswordInput).isDisplayed();
 
     }
 
-//    public static void main(String[] args) {
-//        WebElement elementUserName = driver.findElement(userNameInput);
-//        elementUserName.sendKeys("Alekcandr");
-//
-//        WebElement elementLastName = driver.findElement(lastNameInput);
-//        elementLastName.sendKeys("Burlutskyi");
-//
-//        WebElement elementAddressmailAdd = driver.findElement(addressMailAddInput);
-//        elementAddressmailAdd.sendKeys("Aleksandrburlutskiy@gmail.com");
-//
-//        WebElement elementPassword = driver.findElement(passwordInput);
-//        elementPassword.sendKeys("Aleks123456");
-//
-//        WebElement elementConfirmPassword = driver.findElement(confirmPasswordInput);
-//        elementConfirmPassword.sendKeys("Aleks123456");
+    public void main(String[] args) {
+        WebElement elementUserName = driver.findElement(userNameInput);
+        elementUserName.sendKeys("Alekcandr");
 
-    WebElement elementSingUpForNewsletterInput = driver.findElement(singUpForNewsletterInput);
+        WebElement elementLastName = driver.findElement(lastNameInput);
+        elementLastName.sendKeys("Burlutskyi");
+
+        WebElement elementAddressmailAdd = driver.findElement(addressMailAddInput);
+        elementAddressmailAdd.sendKeys("Aleksandrburlutskiy@gmail.com");
+
+        WebElement elementPassword = driver.findElement(passwordInput);
+        elementPassword.sendKeys("Aleks123456");
+
+        WebElement elementConfirmPassword = driver.findElement(confirmPasswordInput);
+        elementConfirmPassword.sendKeys("Aleks123456");
+
+        WebElement elementSingUpForNewsletterInput = driver.findElement(singUpForNewsletterInput);
         elementSingUpForNewsletterInput.click();
 
 
-//            }
+    }
 
+    public RegisterPage singUpForNewsletterInput() {
+        driver.findElement(singUpForNewsletterInput).click();
+        return this;
 
-
+    }
 }
-

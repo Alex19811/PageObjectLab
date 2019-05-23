@@ -14,8 +14,8 @@ public class MainPage extends BasePage {
     private By registerLink = By.linkText("Register");
 
     public MainPage clickAccountButton() {
-        driver.findElement(accountButton).click();
-        return this;
+            driver.findElement(accountButton).click();
+            return this;
     }
     public RegisterPage clickRegisterLink () {
         driver.findElement(registerLink).click();
