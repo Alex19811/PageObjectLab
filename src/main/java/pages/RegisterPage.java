@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
-public class RegisterPage<userNameInput> extends BasePage {
+public class RegisterPage extends BasePage {
     public RegisterPage() {
         Assert.assertTrue(driver.findElement(userNameInput).isDisplayed());
 
@@ -125,30 +125,7 @@ public class RegisterPage<userNameInput> extends BasePage {
     }
 }
 
-//    public RegisterPage singUpForNewsletterInput() {
-//        driver.findElement(singUpForNewsletterInput).click();
-//        return this;
-//
-//    }
-//    public void sendKeys() {
-//        WebElement elementUserName = driver.findElement(userNameInput);
-//        elementUserName.sendKeys("Alekcandr");
-//
-//        WebElement elementLastName = driver.findElement(lastNameInput);
-//        elementLastName.sendKeys("Burlutskyi");
-//
-//        WebElement elementAddressmailAdd = driver.findElement(addressMailAddInput);
-//        elementAddressmailAdd.sendKeys("Aleksandrburlutskiy@gmail.com");
-//
-//        WebElement elementPassword = driver.findElement(passwordInput);
-//        elementPassword.sendKeys("Aleks123456");
-//
-//        WebElement elementConfirmPassword = driver.findElement(confirmPasswordInput);
-//        elementConfirmPassword.sendKeys("Aleks123456");
-//
-//        WebElement elementSingUpForNewsletterInput = driver.findElement(singUpForNewsletterInput);
-//        elementSingUpForNewsletterInput.click();
-//    }
+
 
 
 
