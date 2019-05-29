@@ -3,18 +3,33 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import pages.LoginPage;
 import pages.MainPage;
 import pages.RegisterPage;
 
 public class Tests extends BaseTest {
 
+    MainPage mainPage;
+
+    @BeforeMethod(alwaysRun = true)
+    public void xmsinUnit() {
+
+        mainPage = new MainPage();
+    }
+
+//    @BeforeMethod(alwaysRun = true)
+//    public void msinUnit() {
+//
+//        mainPage = new MainPage();
+//
+//    }
 
     @Test
     public void checkAllFilds() throws InterruptedException {
-        MainPage mainPage = new MainPage();
-        mainPage.clickAccountButton().clickRegisterLink().clickBackButtonInput();
+        mainPage.clickAccountButton().clickRegisterLink();
 
         Thread.sleep(3000);
 
@@ -24,18 +39,17 @@ public class Tests extends BaseTest {
         Assert.assertTrue(registerPage.isAddessMailAddPresent());
         Assert.assertTrue(registerPage.isPassworPresent());
         Assert.assertTrue(registerPage.isConfirmPasswordPresent());
-
+        // SoftAssert.
     }
 
 
     @Test
     public void clickBackButton() throws InterruptedException {
-        MainPage mainPage = new MainPage();
         mainPage.clickAccountButton().clickRegisterLink().clickBackButtonInput();
         Thread.sleep(5000);
 
         RegisterPage registerPage = new RegisterPage();
-        Assert.assertEquals(registerPage.isNewSelerTextLogin(),"LOGIN OR CREATE AN ACCOUNT");
+        Assert.assertEquals(registerPage.isNewSelerTextLogin(), "LOGIN OR CREATE AN ACCOUNT");
 
 
 //    Assert.assertTrue(registerPage.isLoginMailPresent());
@@ -44,7 +58,6 @@ public class Tests extends BaseTest {
 
     @Test
     public void clickRegisterButton() throws InterruptedException {
-        MainPage mainPage = new MainPage();
         mainPage.clickAccountButton().clickRegisterLink().ClickRegisterButton();
 
         RegisterPage registerPage = new RegisterPage();
@@ -53,12 +66,12 @@ public class Tests extends BaseTest {
         Assert.assertEquals(registerPage.AdviceRequiredEntryEmailAddress(), "This is a required field.");
         Assert.assertEquals(registerPage.AdviceRequiredEntryPasswordAddress(), "This is a required field.");
         Assert.assertEquals(registerPage.AdviceRrequiredEntryConfirmation(), "This is a required field.");
-
+        //SoftAssert.assertTrue(registerPage.AdviceRequiredEntryFirstname(),"not present");
 
     }
+
     @Test
-    public  void sendKeys()throws InterruptedException {
-        MainPage mainPage = new MainPage();
+    public void sendKeys() throws InterruptedException {
         mainPage.clickAccountButton().clickRegisterLink();
 
         RegisterPage registerPage = new RegisterPage();

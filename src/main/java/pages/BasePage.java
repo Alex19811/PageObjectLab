@@ -9,15 +9,26 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.openqa.selenium.logging.LogType.DRIVER;
+
 public class BasePage {
-    protected static WebDriver driver;
+    //protected static WebDriver driver;
+    private final static ThreadLocal <WebDriver>DRIVER=new ThreadLocal<>();
 
 
-    public static void setDriver(WebDriver webDriver) {
-        driver=webDriver;
+
+   public static WebDriver getDriver() {
+
+        return DRIVER.get();
     }
 
-    public static WebDriver getDriver() {
-        return driver;
+    public static void setDriver(WebDriver webDriver) {
+        DRIVER.set(webDriver);
+    }
+
+
+    public static void closeDriver() {
+        if (getDriver() != null)
+            getDriver().close();
     }
 }

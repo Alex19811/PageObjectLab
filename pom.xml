@@ -63,6 +63,7 @@
             <reportVersion>2.7.0</reportVersion>
 
           </configuration>
+
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -83,6 +84,7 @@
             <argLine>
               -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
             </argLine>
+            <suiteXmlFiles>yourSuite.xml</suiteXmlFiles>
           </configuration>
           <dependencies>
             <dependency>
